@@ -1,0 +1,122 @@
+/* 1. Global Reset & Layout */
+#root {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  height: 100vh;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 400px 1fr; /* Fixed sidebar, flexible CV */
+  gap: 2rem;
+  height: 90vh;
+  align-items: start;
+}
+
+@media (max-width:500px) {
+  .App {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* 2. Compact Input Form */
+.inputForm {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  overflow-y: auto;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.experience-entry{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+textarea{
+  resize: vertical;
+  width: 90%;
+  min-height: 80px;
+}
+
+.inputForm h3, label {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Make inputs look modern */
+.inputForm input , .inputForm textarea {
+  color: #b6d1ec;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* 3. CV Styling */
+.cv-container {
+  background-color: white;
+  padding: 3rem; /* Standard document padding */
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  min-height: 100%;
+  color: #2c3e50; 
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Section styling inside CV */
+.cv-container h3 {
+  border-bottom: 2px solid rgb(0, 120, 114);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+.item-entry {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+.item-entry p {
+  margin: 0.2rem 0;
+  line-height: 1.4;
+}
+
+
+/* 4. Print Logic  */
+@media print {
+  @page {
+    margin: 1cm;
+  }
+
+  #root,
+  .App {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .inputForm {
+    display: none !important;
+  }
+
+  .cv-container {
+    box-shadow: none;
+    padding: 0;
+    width: 100% !important;
+  }
+}
