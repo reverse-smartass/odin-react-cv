@@ -97,7 +97,6 @@ function AddNewSection({ sectionName, state, setState, properties }) {
       return item; // Keep others as they are
     });
     setState(updatedState);
-    console.log(updatedState);
   };
 
   return (
