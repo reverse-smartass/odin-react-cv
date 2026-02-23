@@ -19,6 +19,14 @@
     grid-template-columns: 1fr;
     gap: 30px;
   }
+
+  .printcv {
+    margin-top: 0;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 /* 2. Compact Input Form */
@@ -110,7 +118,7 @@ textarea{
     padding: 0;
   }
 
-  .inputForm {
+  .inputForm, .printcv {
     display: none !important;
   }
 

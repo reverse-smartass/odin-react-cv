@@ -41,6 +41,9 @@ function App() {
         <SectionToCV sectionName="Experience" state={experience} properties={["Company", "Role", "Duration"]} />
         <SectionToCV sectionName="Education" state={education} properties={["Institution", "Degree", "Years"]} />
       </div>
+      <button className="printcv" onClick={() => window.print()} style={{ marginTop: "4rem", backgroundColor:"green"}}>
+        Print CV
+      </button>
     </div>
   );
 }
